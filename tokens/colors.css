@@ -1,0 +1,21 @@
+/*
+ * Kyrox Studio — logo renkleri
+ * Kaynak: kyrox-brand/tokens/tokens.json
+ * Web sitesi, Fair CRM ve Fair Stand bu dosyayı kullanır.
+ * Tam marka paleti (arayüz renkleri, nötrler) kılavuzun 2. bölümünde eklenecek.
+ */
+:root {
+  /* Malzeme renkleri (logodaki üç parça) */
+  --kyrox-steel: #B4B7BB;        /* çelik, açık zemin */
+  --kyrox-steel-on-dark: #C9CCD0; /* çelik, koyu zemin */
+  --kyrox-wood: #A2652C;         /* ahşap, meşe tonu */
+  --kyrox-leather: #7B3B1D;      /* deri, konyak */
+
+  /* Temel */
+  --kyrox-ink: #0B0B0B;          /* yazı ve koyu zemin */
+  --kyrox-paper: #F5F3EF;        /* açık zemin */
+  --kyrox-white: #FFFFFF;
+
+  /* Vurgu */
+  --kyrox-copper: #C47A3A;       /* butonlar, öne çıkan detaylar */
+}
