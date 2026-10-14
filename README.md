@@ -18,6 +18,9 @@ tokens/
   colors.css      Marka renkleri, CSS değişkeni olarak (--kyrox-*)
   typography.css  Yazı tipleri (Inter, Archivo) ve başlık sınıfları
   tokens.json     Renkler, fontlar ve boyut ölçeği, JSON olarak
+templates/
+  *.html          Instagram ve LinkedIn şablonları (tarayıcıda açılır)
+  png/            Boş şablonların gerçek ölçüde PNG'leri
 kilavuz/
   logo-ailesi.html   Tüm versiyonların görsel örneği (tarayıcıda aç)
 tools/          Logoyu vektör kaynaktan yeniden üreten betikler
