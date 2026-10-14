@@ -1,81 +1,35 @@
-# Kyrox Studio — Marka
+# kyrox-brand
 
-Kyrox Studio'nun logoları, marka kılavuzu ve ortak renk tanımları. Web sitesi, Fair CRM, Fair Stand ve tüm sosyal medya işleri logoyu ve renkleri buradan alır.
+Kyrox Studio logo dosyaları ve marka renk tanımları. Fair CRM, Fair Stand, kyrox.studio web sitesi ve diğer tüm işler logoyu ve renkleri buradan alır.
 
-> **Precision meets Craft** · kyrox.studio
+**Kurallar bu repoda değil.** Logonun nasıl kullanılacağı, renkler ve yazım kuralları için:
+[kyrox-platform/standards/brand/BRAND_STANDARD.md](https://github.com/kyrox-studio/kyrox-platform/blob/main/standards/brand/BRAND_STANDARD.md)
+
+Bu reponun neden var olduğu ve sınırları: [ADR-0010](https://github.com/kyrox-studio/kyrox-platform/blob/main/ecosystem/decisions/0010-brand-repository.md)
 
 ## İçerik
 
 ```
 logo/
-  svg/        Kaynak dosyalar. Web, matbaa, lazer kesim ve CNC için bunu kullan.
-  png/        Şeffaf zeminli PNG'ler (logo 2400 px, sembol 1024 px),
-              profil görselleri (1080 px) ve favicon boyutları
+  svg/          Kaynak dosyalar (logo, sembol, yazı, profil, favicon)
+  png/          Şeffaf zeminli PNG'ler, 1080 px profil görselleri, favicon boyutları
   favicon.ico
-kilavuz/
-  logo-ailesi.html   Logo versiyonları, renkler ve kullanım kuralları (tarayıcıda aç)
 tokens/
-  colors.css   Renkler, CSS değişkeni olarak
-  tokens.json  Aynı renkler, JSON olarak
-tools/         Logoyu vektör kaynaktan yeniden üreten betikler
+  colors.css    Logo renkleri, CSS değişkeni olarak (--kyrox-*)
+  tokens.json   Aynı renkler, JSON olarak
+kilavuz/
+  logo-ailesi.html   Tüm versiyonların görsel örneği (tarayıcıda aç)
+tools/          Logoyu vektör kaynaktan yeniden üreten betikler
 ```
 
-## Hangi dosya nerede
+## Logoyu güncellemek
 
-| Kullanım | Dosya |
-| --- | --- |
-| Web sitesi, sunum, teklif, e-posta imzası | `logo/svg/kyrox-logo-renkli.svg` |
-| Koyu zemin | `logo/svg/kyrox-logo-renkli-koyu-zemin.svg` |
-| Tek renk baskı, lazer, ahşaba yakma | `kyrox-logo-siyah.svg` / `kyrox-logo-beyaz.svg` |
-| Instagram ve LinkedIn profili | `logo/png/kyrox-profil-siyah-1080.png` |
-| Web sitesi favicon'u | `logo/favicon.ico`, `logo/svg/favicon.svg`, `logo/png/apple-touch-icon-180.png` |
+Ürün repolarındaki logo dosyaları elle düzenlenmez. Logo değişecekse:
 
-## Temel kurallar
+1. `tools/paths.json` veya `tools/build.py` güncellenir.
+2. `tools/` altında `python3 build.py` (SVG) ve `python3 png.py` (PNG, Playwright + Chromium gerekir) çalıştırılır; çıktı `tools/out/` altına yazılır ve `logo/` altına kopyalanır.
+3. Bu repoya PR açılır, ardından ürün repolarına ayrı PR'lar.
 
-- Bu düz logo markanın tek logosudur. Gölgeli, dokulu ya da 3D versiyon kullanılmaz.
-- `.studio` her zaman küçük harf yazılır; domainin kendisini temsil eder.
-- Logo esnetilmez, döndürülmez, parça renkleri değiştirilmez.
-- En küçük boyut: ana logo ekranda 140 px / baskıda 35 mm, sembol 16 px / 8 mm.
+`.studio` yazısı Inter Medium fontuyla üretilir; yeniden üretmek için Inter'in kurulu olması gerekir.
 
-Ayrıntılar için `kilavuz/logo-ailesi.html` dosyasını aç.
-
-## Renkler
-
-| Ad | Değer | Kullanım |
-| --- | --- | --- |
-| Çelik | `#B4B7BB` | Logo, açık zemin |
-| Çelik, koyu zemin | `#C9CCD0` | Logo, siyah üzerinde |
-| Ahşap | `#A2652C` | Logo |
-| Deri | `#7B3B1D` | Logo |
-| Mürekkep | `#0B0B0B` | Yazı ve koyu zemin |
-| Kağıt | `#F5F3EF` | Açık zemin |
-| Bakır | `#C47A3A` | Vurgu rengi |
-
-Bir projede kullanmak için:
-
-```html
-<link rel="stylesheet" href="tokens/colors.css">
-<style> .buton { background: var(--kyrox-copper); } </style>
-```
-
-## Logoyu yeniden üretmek
-
-`tools/paths.json` logonun vektör şekillerini tutar. Bir renk ya da versiyon değişirse:
-
-```bash
-cd tools
-python3 build.py   # SVG'leri out/svg/ altına yazar
-python3 png.py     # PNG'leri out/png/ altına yazar (Playwright + Chromium gerekir)
-```
-
-`.studio` yazısı Inter Medium ile üretilir (`lc.py`, `textpath.py`); yeniden üretmek için Inter fontunun kurulu olması gerekir.
-
-## Yol haritası
-
-- [x] Logo ve logo ailesi
-- [ ] Marka kılavuzu: renk paleti, fontlar, ses tonu
-- [ ] Web sitesi (kyrox-website)
-- [ ] Instagram ve LinkedIn şablonları
-- [ ] İçerik takvimi
-
-Proje fotoğrafları, render'lar ve videolar bu repoya girmez; onlar Google Drive'da durur.
+Proje fotoğrafları, render'lar ve videolar bu repoya girmez.
