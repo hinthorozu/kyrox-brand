@@ -15,8 +15,9 @@ logo/
   png/          Şeffaf zeminli PNG'ler, 1080 px profil görselleri, favicon boyutları
   favicon.ico
 tokens/
-  colors.css    Logo renkleri, CSS değişkeni olarak (--kyrox-*)
-  tokens.json   Aynı renkler, JSON olarak
+  colors.css      Marka renkleri, CSS değişkeni olarak (--kyrox-*)
+  typography.css  Yazı tipleri (Inter, Archivo) ve başlık sınıfları
+  tokens.json     Renkler, fontlar ve boyut ölçeği, JSON olarak
 kilavuz/
   logo-ailesi.html   Tüm versiyonların görsel örneği (tarayıcıda aç)
 tools/          Logoyu vektör kaynaktan yeniden üreten betikler
