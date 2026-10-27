@@ -14,6 +14,3 @@ def text_path(text, weight='Medium', size=100, x=0, baseline=0, track=0.0):
         gs[g].draw(tp)
         cx += gs[g].width * s + track * size
     return pen.getCommands(), cx - track * size
-def metrics(weight='Medium'):
-    f = TTFont(FONTDIR + f'Inter-{weight}.otf'); os2 = f['OS/2']
-    return f['head'].unitsPerEm, os2.sCapHeight, os2.sxHeight
