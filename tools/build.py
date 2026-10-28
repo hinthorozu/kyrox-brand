@@ -1,4 +1,4 @@
-import json, os, subprocess
+import json, os
 P = json.load(open('paths.json'))
 
 STEEL, STEEL_D = '#B4B7BB', '#C9CCD0'
